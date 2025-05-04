@@ -9,7 +9,7 @@ class ButtonChangeColorsBloc
   ButtonChangeColorsBloc() : super(ButtonChangeColorsInitial()) {
     on<ChangeColorsEvent>((event, emit) {
       bool isText = event.isSelected;
-      print('bool $isText');
+      print("Hello");
       emit(ChangeColors(isSelected: isText));
     });
   }

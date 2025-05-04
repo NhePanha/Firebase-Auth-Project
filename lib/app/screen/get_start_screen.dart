@@ -18,9 +18,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
         children: [
           Container(
             color: Colors.black,
-            // color: Colors.black.withOpacity(0),
           ),
-          // Centered Content with Blur Effect
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
