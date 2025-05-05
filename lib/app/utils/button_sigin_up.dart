@@ -4,12 +4,12 @@ class Buttonsign_in_up extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
+
   const Buttonsign_in_up({
     Key? key,
     required this.text,
     required this.onPressed,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

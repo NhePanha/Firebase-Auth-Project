@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project_test/app/screen/home/homescreens.dart';
 import 'package:project_test/app/screen/register/sign_up_screens.dart';
 import 'package:project_test/app/utils/toast.dart';
+import 'package:project_test/button_navigationbar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
+
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -22,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       isLoading = true;
     });
-
     try {
       await _auth.signInWithEmailAndPassword(
         email: emailController.text.trim(),
@@ -34,8 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
         icon: Icons.check_circle_outline,
         backgroundColor: const Color.fromARGB(255, 16, 165, 71),
       );
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => CustomBottomNavScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => WalletHomeScreen()));
       // Navigate to the next screen or home screen
     } on FirebaseAuthException catch (e) {
       Showmessage(

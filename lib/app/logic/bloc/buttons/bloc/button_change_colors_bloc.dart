@@ -10,6 +10,7 @@ class ButtonChangeColorsBloc
     on<ChangeColorsEvent>((event, emit) {
       bool isText = event.isSelected;
       print("Hello");
+      isText ? false : true;
       emit(ChangeColors(isSelected: isText));
     });
   }
